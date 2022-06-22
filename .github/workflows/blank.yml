@@ -40,6 +40,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
+      - name: INSTALL SFDX 
+        run: npm install sfdx-cli --global
+
       - name: GET LATEST CI/CD SCRIPTS
         run: |
           echo "[1] CREATE SSH KEY"
