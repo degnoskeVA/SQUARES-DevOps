@@ -40,6 +40,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
+      - name: AUTHENTICATE DEV2 ORG
+        shell: pwsh
+        run: /SQUARES-DevOps/.github/workflows/authenticate-salesforce-authurl.ps1
+        
       - name: INSTALL SFDX 
         run: npm install sfdx-cli --global
         
