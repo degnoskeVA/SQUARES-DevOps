@@ -42,7 +42,7 @@ jobs:
 
       - name: AUTHENTICATE DEV2 ORG
         shell: pwsh
-        run: /SQUARES-DevOps/.github/workflows/authenticate-salesforce-authurl.ps1
+        run: ../SQUARES-DevOps/.github/workflows/authenticate-salesforce-authurl.ps1
         
       - name: INSTALL SFDX 
         run: npm install sfdx-cli --global
