@@ -45,7 +45,7 @@ jobs:
         
       - name: AUTHENTICATE DEV2 ORG
         shell: pwsh
-        run: authenticate-salesforce-authurl.ps1
+        run: ../authenticate-salesforce-authurl.ps1
 
       # Runs a single command using the runners shell
       - name: SOQL Query all error log records
