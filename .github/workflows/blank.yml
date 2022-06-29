@@ -42,25 +42,6 @@ jobs:
 
       - name: INSTALL SFDX 
         run: npm install sfdx-cli --global
-
-      - name: GET LATEST CI/CD SCRIPTS
-        run: |
-          echo "[1] CREATE SSH KEY"
-          mkdir ~/.ssh
-          echo "${{ secrets.DTC_RELEASE_CICD_KEY_BASE64 }}" | base64 -di > ~/.ssh/dtc-release-cicd.ssh  
-          chmod 400 ~/.ssh/dtc-release-cicd.ssh  
-          echo "[2] INITIALIZE SSH-AGENT"
-          eval "$(ssh-agent -s)"
-          echo "[3] ADD SSH KEY"
-          ssh-add ~/.ssh/dtc-release-cicd.ssh
-          echo "[4] REMOVE ./CI-CD DIRECTORY IF IT ALREADY EXISTS"
-          rm -rf ci-cd
-          git clone git@github.com:department-of-veterans-affairs/dtc-release-cicd.git -b master ci-cd
-          
-      - name: INSTALL SFDX 
-        run: npm install sfdx-cli --global
-      
-
         
       - name: AUTHENTICATE DEV2 ORG
         shell: pwsh
