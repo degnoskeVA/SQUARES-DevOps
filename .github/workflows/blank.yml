@@ -49,4 +49,5 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: SOQL Query and delete all error log records
+        shell: pwsh
         run: ../SQUARES-DevOps/.github/workflows/delete-error-logs.ps1
