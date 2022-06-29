@@ -1,7 +1,8 @@
-param($org_alias, $auth_url)
+
 
 Write-Host "AUTHENTICATING SALESFORCE ORG (VIA AUTH URL)" 
-
+$org_alias = "squaredev2"
+$auth_url = "force://PlatformCLI::5Aep861YbQ2WNspBqEUgFsHVTHaTaclYz2mONygu9Iyc.gICvY91IPR1qFRuHMq2Lie7iUST.FJWDGC.Q8pYbbn@va--squaredev2.my.salesforce.com"
 $key_file = "auth_url.key"
 
 New-Item -Type File $key_file | Out-Null
