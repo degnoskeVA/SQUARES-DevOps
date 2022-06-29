@@ -49,7 +49,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: SOQL Query all error log records
-        run: sfdx force:data:soql:query -q "SELECT Id FROM ACMN_Error_Log__c" --resultformat csv  | out-file -encoding oem out.csv -u squaredev2
+        run: sfdx force:data:soql:query -q "SELECT Id FROM ACMN_Error_Log__c" --resultformat csv -u squaredev2 | out-file -encoding oem out.csv 
 
       # Runs a set of commands using the runners shell
       - name: Delete all error logs
