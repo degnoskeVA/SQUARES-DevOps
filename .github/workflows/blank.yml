@@ -59,15 +59,12 @@ jobs:
           
       - name: INSTALL SFDX 
         run: npm install sfdx-cli --global
-        
-      - name: WORKFLOW SETUP
-        run: pwsh ./ci-cd/workflow/workflow-setup.ps1
-
+      
 
         
       - name: AUTHENTICATE DEV2 ORG
         shell: pwsh
-        run: . .\ci-cd\authenticate\authenticate-salesforce-authurl.ps1 -org_alias $env:DEV2_ALIAS -auth_url $env:SF_DEV2_AUTH_URL
+        run: authenticate-salesforce-authurl.ps1
 
       # Runs a single command using the runners shell
       - name: SOQL Query all error log records
