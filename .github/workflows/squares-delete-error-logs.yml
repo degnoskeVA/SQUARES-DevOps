@@ -22,7 +22,7 @@ env:
   SF_DEV2_AUTH_URL:             ${{ secrets.DEV2.SF_DEVHUB_ORG_URL }}
   DEVHUB_ORG_USERNAME:          ${{ secrets.CICD_DEVHUB_USERNAME }}
   DEVHUB_ALIAS:                 "devhub"
-  DEV2_ALIAS:                    "dev2"
+  DEV2_ALIAS:                    "squaredev2"
 
 
 
