@@ -19,7 +19,7 @@ env:
   SF_DEVHUB_CLIENTID:           ${{ secrets.SF_DEVHUB_CLIENTID }}
   SF_DEVHUB_KEY_BASE64:         ${{ secrets.SF_DEVHUB_KEY_BASE64 }}
   SF_DEVHUB_ORG_URL:            ${{ secrets.SF_DEVHUB_ORG_URL }}
-  SF_DEV2_AUTH_URL:              "force://PlatformCLI::5Aep861YbQ2WNspBqEUgFsHVTHaTaclYz2mONygu9Iyc.gICvY91IPR1qFRuHMq2Lie7iUST.FJWDGC.Q8pYbbn@va--squaredev2.my.salesforce.com"
+  SF_DEV2_AUTH_URL:             ${{ secrets.DEV2.SF_DEVHUB_ORG_URL }}
   DEVHUB_ORG_USERNAME:          ${{ secrets.CICD_DEVHUB_USERNAME }}
   DEVHUB_ALIAS:                 "devhub"
   DEV2_ALIAS:                    "dev2"
@@ -34,6 +34,7 @@ jobs:
   delete-error-logs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    environment: DEV2
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -45,7 +46,7 @@ jobs:
         
       - name: AUTHENTICATE DEV ORG
         shell: pwsh
-        run: ../SQUARES-DevOps/.github/workflows/authenticate-salesforce-authurl.ps1
+        run: ../SQUARES-DevOps/.github/workflows/authenticate-salesforce-authurl.ps1  -auth_url ${{ secrets.SF_DEV2_AUTH_URL}}  -devhub_alias $env:DEVHUB_ALIAS
 
       # Runs a single command using the runners shell
       - name: SOQL Query and delete all error log records
