@@ -13,6 +13,7 @@ on:
     inputs:
       sandbox:
         type: environment
+        default: DEV2
 
 env:
   GITHUB_WORKFLOW_TMP_FOLDER:   ".github-workflow-tmp"
