@@ -46,7 +46,7 @@ jobs:
         
       - name: AUTHENTICATE DEV ORG
         shell: pwsh
-        run: ../SQUARES-DevOps/.github/workflows/authenticate-salesforce-authurl.ps1  -auth_url ${{ secrets.SF_DEV2_AUTH_URL}}  -devhub_alias $env:DEV2_ALIAS
+        run: ../SQUARES-DevOps/.github/workflows/authenticate-salesforce-authurl.ps1  -auth_url ${{ secrets.SF_DEV2_AUTH_URL}}  -devhub_alias squaredev2
 
       # Runs a single command using the runners shell
       - name: SOQL Query and delete all error log records
