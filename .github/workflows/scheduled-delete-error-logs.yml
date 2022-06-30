@@ -6,13 +6,7 @@ name: SCHEDULED Squares Delete Error Logs
 on: 
   schedule:
   - cron: '0 0 * * *'
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
 
-    inputs:
-      sandbox:
-        type: environment
-        default: DEV2
 env:
   GITHUB_WORKFLOW_TMP_FOLDER:   ".github-workflow-tmp"
   GITHUB_JSON:                  ${{ toJSON(github) }}
